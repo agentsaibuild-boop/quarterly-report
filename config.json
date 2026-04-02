@@ -2,16 +2,28 @@
   "clone_dir": "/home/nikolay-zarov/projects",
   "manual_projects": [
     {
+      "name": "NemoClaw",
+      "path": "/home/nikolay-zarov/NemoClaw",
+      "type": "git",
+      "description": "OpenClaw — NVIDIA open-source sandbox за автономни AI агенти"
+    },
+    {
+      "name": "aiAgents",
+      "path": "/home/nikolay-zarov/ai-agent",
+      "type": "git",
+      "description": "24/7 AI агент система — Claude Code agent, паралелни опашки, нотификации"
+    },
+    {
+      "name": "office-assistant",
+      "path": "/home/nikolay-zarov/ai-projects/office-assistant",
+      "type": "git",
+      "description": "AI офис асистент — FastAPI backend, задачи с AI модели, файлов анализ"
+    },
+    {
       "name": "ai-projects/idea-gate",
       "path": "/home/nikolay-zarov/ai-projects/idea-gate",
       "type": "folder",
       "description": "Idea Gate проект"
-    },
-    {
-      "name": "ai-projects/office-assistant",
-      "path": "/home/nikolay-zarov/ai-projects/office-assistant",
-      "type": "folder",
-      "description": "Office Assistant"
     },
     {
       "name": "procurement-pipeline",
