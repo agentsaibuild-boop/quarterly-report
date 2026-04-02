@@ -1,35 +1,6 @@
 {
-  "projects": [
-    {
-      "name": "ai-agent",
-      "path": "/home/nikolay-zarov/ai-agent",
-      "type": "git",
-      "description": "AI агент / OpenClaw"
-    },
-    {
-      "name": "tp-agent",
-      "path": "/home/nikolay-zarov/tp-agent",
-      "type": "git",
-      "description": "TP агент"
-    },
-    {
-      "name": "NemoClaw",
-      "path": "/home/nikolay-zarov/NemoClaw",
-      "type": "git",
-      "description": "NemoClaw проект"
-    },
-    {
-      "name": "project-to-json",
-      "path": "/home/nikolay-zarov/project-to-json",
-      "type": "git",
-      "description": "Project to JSON инструмент"
-    },
-    {
-      "name": "schedule-generator",
-      "path": "/home/nikolay-zarov/schedule-generator",
-      "type": "git",
-      "description": "График генератор"
-    },
+  "clone_dir": "/home/nikolay-zarov/projects",
+  "manual_projects": [
     {
       "name": "ai-projects/idea-gate",
       "path": "/home/nikolay-zarov/ai-projects/idea-gate",
@@ -47,23 +18,8 @@
       "path": "/home/nikolay-zarov/procurement-pipeline",
       "type": "folder",
       "description": "Procurement Pipeline"
-    },
-    {
-      "name": "website",
-      "path": "/home/nikolay-zarov/website",
-      "type": "git",
-      "github": "git@github.com:agentsaibuild-boop/website.git",
-      "description": "Уебсайт"
-    },
-    {
-      "name": "xml-json",
-      "path": "/home/nikolay-zarov/xml-json",
-      "type": "git",
-      "github": "git@github.com:agentsaibuild-boop/xml-json.git",
-      "description": "XML→JSON конвертор"
     }
   ],
-  "git_author": "",
   "output_dir": "output",
   "default_period_months": 3
 }

@@ -163,22 +163,53 @@ def folder_stats(folder_path):
     }
 
 
-# ── Git pull ─────────────────────────────────────────────────────────────────
+# ── GitHub авто-откриване ────────────────────────────────────────────────────
 
-def pull_repos(projects):
-    """git pull за всички проекти с github поле в config."""
-    for p in projects:
-        if not p.get("github"):
-            continue
-        path = Path(p["path"])
+REPOS_DIR = Path.home() / "projects"  # папка за всички клонирани репота
+
+
+def get_github_repos() -> list[dict]:
+    """Взема всички репота на потребителя от GitHub чрез gh CLI."""
+    result = subprocess.run(
+        ["gh", "repo", "list", "--json", "name,sshUrl,description,isPrivate",
+         "--limit", "200"],
+        capture_output=True, text=True
+    )
+    if result.returncode != 0:
+        print("  ВНИМАНИЕ: gh не е логнат. Пусни: gh auth login")
+        return []
+    return json.loads(result.stdout)
+
+
+def sync_all_repos(clone_dir: Path) -> list[dict]:
+    """Клонира/обновява всички GitHub репота и връща списък за сканиране."""
+    clone_dir.mkdir(parents=True, exist_ok=True)
+    repos = get_github_repos()
+    if not repos:
+        return []
+
+    projects = []
+    for r in repos:
+        name = r["name"]
+        path = clone_dir / name
+
         if not (path / ".git").exists():
-            print(f"  Клонирам {p['name']}...")
-            subprocess.run(["git", "clone", p["github"], str(path)],
+            print(f"  Клонирам {name}...")
+            subprocess.run(["git", "clone", "--quiet", r["sshUrl"], str(path)],
                            capture_output=True)
         else:
-            print(f"  git pull {p['name']}...")
+            print(f"  pull {name}...")
             subprocess.run(["git", "pull", "--quiet"],
                            cwd=str(path), capture_output=True)
+
+        projects.append({
+            "name": name,
+            "description": r.get("description") or "",
+            "type": "git",
+            "path": str(path),
+        })
+
+    return projects
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -192,20 +223,26 @@ def collect(months: int = 3):
 
     print(f"Период: {since} → {until}")
 
-    # Обновява репотата от GitHub
-    print("Обновявам репота от GitHub...")
-    pull_repos(config["projects"])
+    # Авто-открива и обновява всички GitHub репота
+    clone_dir = Path(config.get("clone_dir", str(REPOS_DIR)))
+    print(f"Синхронизирам GitHub репота → {clone_dir}")
+    github_projects = sync_all_repos(clone_dir)
+
+    # Добавя ръчно конфигурираните (папки без git, локални проекти извън GitHub)
+    manual = [p for p in config.get("manual_projects", [])]
+
+    all_projects = github_projects + manual
 
     # Финанси от Excel
     print("Чета Excel...")
     finances = read_excel()
 
-    # Проекти
-    print(f"Сканирам {len(config['projects'])} проекта...")
+    # Сканира всички проекти
+    print(f"\nСканирам {len(all_projects)} проекта...")
     projects = []
-    for p in config["projects"]:
+    for p in all_projects:
         print(f"  {p['name']}...")
-        if p.get("type") == "git":
+        if p.get("type", "git") == "git":
             stats = git_stats(p["path"], since, until)
         else:
             stats = folder_stats(p["path"])
