@@ -1,25 +1,233 @@
 {
-  "generated_at": "2026-04-02T13:32:57.216837",
+  "generated_at": "2026-04-02T14:05:35.747695",
   "period": {
     "from": "2026-01-02",
     "to": "2026-04-02",
     "months": 3
+  },
+  "finances": {
+    "months": [
+      "2026-01",
+      "2026-02",
+      "2026-03"
+    ],
+    "income": {
+      "ОБЩО ПРИХОДИ": {},
+      "Приход продажба Технически предложения": {
+        "2026-01": 0,
+        "2026-02": 0,
+        "2026-03": 0
+      },
+      "Приход продажба OCR за стойности от чертеж": {
+        "2026-01": 0,
+        "2026-02": 0,
+        "2026-03": 0
+      },
+      "Приход продажба четене на чертеж": {
+        "2026-01": 0,
+        "2026-02": 0,
+        "2026-03": 0
+      },
+      "Приход продажба Smart Material": {
+        "2026-01": 0,
+        "2026-02": 0,
+        "2026-03": 0
+      }
+    },
+    "expenses": {
+      "Наем на офис": {
+        "2026-01": 500,
+        "2026-02": 500,
+        "2026-03": 1000
+      },
+      "Разходи за възнаграждения": {
+        "2026-01": 6931,
+        "2026-02": 6931,
+        "2026-03": 6931
+      },
+      "Разходи за осигуровки": {
+        "2026-01": 657.66,
+        "2026-02": 657.66,
+        "2026-03": 657.66
+      },
+      "Юридическо обслужване /външно/": {
+        "2026-01": 150,
+        "2026-02": 150,
+        "2026-03": 150
+      },
+      "Гражданска и каско": {
+        "2026-01": 0,
+        "2026-02": 0,
+        "2026-03": 900
+      },
+      "Счетоводни услуги": {
+        "2026-01": 350,
+        "2026-02": 350,
+        "2026-03": 350
+      },
+      "Телефон": {
+        "2026-01": 719,
+        "2026-02": 0,
+        "2026-03": 0
+      },
+      "Лаптоп": {
+        "2026-01": 3062,
+        "2026-02": 0,
+        "2026-03": 0
+      },
+      "Мобилен номер": {
+        "2026-01": 25,
+        "2026-02": 25,
+        "2026-03": 25
+      },
+      "Канц.м-ли и офис консумативи": {
+        "2026-01": 0,
+        "2026-02": 0,
+        "2026-03": 150
+      },
+      "AI инструменти": {
+        "2026-01": 747,
+        "2026-02": 747,
+        "2026-03": 747
+      },
+      "Домейн": {
+        "2026-01": 0,
+        "2026-02": 30,
+        "2026-03": 0
+      },
+      "Хостинг": {
+        "2026-01": 0,
+        "2026-02": 380,
+        "2026-03": 0
+      },
+      "Банкови такси": {
+        "2026-01": 25,
+        "2026-02": 25,
+        "2026-03": 25
+      }
+    },
+    "ai_tools": [
+      {
+        "tool": "Claude",
+        "plan": "Max / high-usage план",
+        "price_per_month": 85,
+        "purpose": "Основен reasoning AI за анализ, архитектура и сложни задачи"
+      },
+      {
+        "tool": "Gemini",
+        "plan": "Google AI Ultra (най-висок план)",
+        "price_per_month": 230,
+        "purpose": "Мултимодален модел, агенти, експериментални функции"
+      },
+      {
+        "tool": "Perplexity AI",
+        "plan": "Pro",
+        "price_per_month": 20,
+        "purpose": "AI research и web reasoning"
+      },
+      {
+        "tool": "GitHub",
+        "plan": "Team",
+        "price_per_month": 10,
+        "purpose": "Code repository, collaboration workspace"
+      },
+      {
+        "tool": "Google Workspace",
+        "plan": "Business Standard",
+        "price_per_month": 12,
+        "purpose": "Workspace: документи, Drive, Meet, collaboration"
+      },
+      {
+        "tool": "Microsoft Copilot",
+        "plan": "Copilot for Microsoft 365",
+        "price_per_month": 30,
+        "purpose": "AI помощник в офис инструменти"
+      },
+      {
+        "tool": "Midjourney",
+        "plan": "Pro",
+        "price_per_month": 60,
+        "purpose": "Генерация на изображения и визуализации"
+      },
+      {
+        "tool": "Visual Studio Code",
+        "plan": "VS Code",
+        "price_per_month": 0,
+        "purpose": "Основна dev среда"
+      },
+      {
+        "tool": "DeepSeek",
+        "plan": "Web / chat",
+        "price_per_month": 0,
+        "purpose": "AI reasoning модел (web достъп)"
+      },
+      {
+        "tool": "Бюджетен ред",
+        "plan": "План",
+        "price_per_month": 0,
+        "purpose": "Предназначение"
+      },
+      {
+        "tool": "Claude Opus 4.6 API",
+        "plan": "API",
+        "price_per_month": 100,
+        "purpose": "premium reasoning / complex coding"
+      },
+      {
+        "tool": "OpenAI gpt-5.3-codex / GPT-5.2 API",
+        "plan": "API",
+        "price_per_month": 90,
+        "purpose": "coding and agent execution"
+      },
+      {
+        "tool": "Gemini 2.5 Pro API",
+        "plan": "API",
+        "price_per_month": 60,
+        "purpose": "long-context and multimodal tasks"
+      },
+      {
+        "tool": "DeepSeek Reasoner API",
+        "plan": "API",
+        "price_per_month": 50,
+        "purpose": "cost-efficient overflow / batch reasoning"
+      },
+      {
+        "tool": "Общо планове",
+        "plan": "",
+        "price_per_month": 447,
+        "purpose": ""
+      },
+      {
+        "tool": "Общо API",
+        "plan": "",
+        "price_per_month": 300,
+        "purpose": ""
+      },
+      {
+        "tool": "Общо",
+        "plan": "",
+        "price_per_month": 747,
+        "purpose": ""
+      }
+    ],
+    "totals_per_month": {
+      "2026-01": 13166.66,
+      "2026-02": 9795.66,
+      "2026-03": 10935.66
+    }
   },
   "projects": [
     {
       "name": "ai-agent",
       "description": "AI агент / OpenClaw",
       "type": "git",
-      "path": "/home/nikolay-zarov/ai-agent",
       "stats": {
-        "commits_in_period": 2,
+        "commits": 2,
         "lines_added": 3127,
         "lines_removed": 87,
-        "files_changed_in_period": 39,
-        "total_files_in_repo": 39,
         "last_commit": "2026-03-20 15:28:51 +0200 Add Claude Code agent, parallel queues, and notification fixes",
-        "current_branch": "main",
-        "recent_commit_messages": [
+        "branch": "main",
+        "recent_commits": [
           "Add Claude Code agent, parallel queues, and notification fixes",
           "Initial commit — 24/7 AI agent system"
         ]
@@ -29,16 +237,13 @@
       "name": "tp-agent",
       "description": "TP агент",
       "type": "git",
-      "path": "/home/nikolay-zarov/tp-agent",
       "stats": {
-        "commits_in_period": 1,
+        "commits": 1,
         "lines_added": 8231,
         "lines_removed": 0,
-        "files_changed_in_period": 109,
-        "total_files_in_repo": 109,
         "last_commit": "2026-03-09 12:59:10 +0200 Initial commit — TP Agent v1.3 full backend + frontend",
-        "current_branch": "main",
-        "recent_commit_messages": [
+        "branch": "main",
+        "recent_commits": [
           "Initial commit — TP Agent v1.3 full backend + frontend"
         ]
       }
@@ -47,16 +252,13 @@
       "name": "NemoClaw",
       "description": "NemoClaw проект",
       "type": "git",
-      "path": "/home/nikolay-zarov/NemoClaw",
       "stats": {
-        "commits_in_period": 258,
+        "commits": 258,
         "lines_added": 50060,
         "lines_removed": 7615,
-        "files_changed_in_period": 330,
-        "total_files_in_repo": 246,
         "last_commit": "2026-03-19 18:57:02 +0000 ci: add nightly E2E with inference test (#386)",
-        "current_branch": "main",
-        "recent_commit_messages": [
+        "branch": "main",
+        "recent_commits": [
           "ci: add nightly E2E with inference test (#386)",
           "docs: add uninstall section to quickstart in README (#423)",
           "docs: add discord channel to docs site (#416)",
@@ -71,12 +273,7 @@
           "Create bug_report.yml (#371)",
           "Enable managed local Ollama inference and add cloud/Ollama model selection (#295)",
           "fix: parameterize sandbox name in setup.sh instead of hardcoding (#340)",
-          "update installer url for curl (#346)",
-          "ci: add docs build workflow for PRs (#334)",
-          "docs: refresh doc and start collecting troubleshooting items in a singular place (#331)",
-          "feat: add non-interactive mode for CI/CD onboarding (#318)",
-          "fix: propagate SANDBOX_NAME to telegram bridge and resolve openshell path (#222)",
-          "docs: document long-output CLI workaround (#327)"
+          "update installer url for curl (#346)"
         ]
       }
     },
@@ -84,16 +281,13 @@
       "name": "project-to-json",
       "description": "Project to JSON инструмент",
       "type": "git",
-      "path": "/home/nikolay-zarov/project-to-json",
       "stats": {
-        "commits_in_period": 1,
+        "commits": 1,
         "lines_added": 411837,
         "lines_removed": 0,
-        "files_changed_in_period": 1250,
-        "total_files_in_repo": 2353,
         "last_commit": "2026-02-09 13:24:55 +0200 Initial commit of universal converter",
-        "current_branch": "main",
-        "recent_commit_messages": [
+        "branch": "main",
+        "recent_commits": [
           "Initial commit of universal converter"
         ]
       }
@@ -102,16 +296,13 @@
       "name": "schedule-generator",
       "description": "График генератор",
       "type": "git",
-      "path": "/home/nikolay-zarov/schedule-generator",
       "stats": {
-        "commits_in_period": 76,
+        "commits": 76,
         "lines_added": 26864,
         "lines_removed": 2182,
-        "files_changed_in_period": 108,
-        "total_files_in_repo": 100,
         "last_commit": "2026-03-23 11:30:49 +0200 test: cover all 6 uncovered lines in schedule_builder.py → 100%",
-        "current_branch": "main",
-        "recent_commit_messages": [
+        "branch": "main",
+        "recent_commits": [
           "test: cover all 6 uncovered lines in schedule_builder.py → 100%",
           "test: add 24 unit tests for _detect_cycle (previously uncovered)",
           "test: add 34 unit tests for _handle_sequence_answer (previously uncovered)",
@@ -126,12 +317,7 @@
           "fix: block schedule generation for out_of_scope projects (C2) + 8 unit tests",
           "test: add 27 unit tests for AIProcessor pure methods (previously uncovered)",
           "test: add 50 unit tests for SelfEvolution (previously uncovered)",
-          "test: add 19 unit tests for ScheduleBuilder.build_from_ai_response (previously uncovered)",
-          "test: add 34 unit tests for export_pdf.py utility functions (previously uncovered)",
-          "fix: use .get() in to_dataframe to prevent KeyError on partial AI output + 21 unit tests",
-          "fix: handle docs: commits in suggest_changelog_entry + 30 unit tests",
-          "fix: 3 bugs in _detect_intent_keywords + 44 unit tests",
-          "test: add 32 unit tests for AIRouter infrastructure (no API calls)"
+          "test: add 19 unit tests for ScheduleBuilder.build_from_ai_response (previously uncovered)"
         ]
       }
     },
@@ -139,61 +325,31 @@
       "name": "ai-projects/idea-gate",
       "description": "Idea Gate проект",
       "type": "folder",
-      "path": "/home/nikolay-zarov/ai-projects/idea-gate",
       "stats": {
-        "total_files": 3795,
-        "total_size_kb": 66729.0,
-        "last_modified": "2026-03-23T12:00:01.339496"
+        "files": 3795,
+        "size_kb": 66729.0,
+        "last_modified": "2026-03-23"
       }
     },
     {
       "name": "ai-projects/office-assistant",
       "description": "Office Assistant",
       "type": "folder",
-      "path": "/home/nikolay-zarov/ai-projects/office-assistant",
       "stats": {
-        "total_files": 11,
-        "total_size_kb": 249578.8,
-        "last_modified": "2026-04-01T14:22:24.768623"
+        "files": 11,
+        "size_kb": 249578.8,
+        "last_modified": "2026-04-01"
       }
     },
     {
       "name": "procurement-pipeline",
       "description": "Procurement Pipeline",
       "type": "folder",
-      "path": "/home/nikolay-zarov/procurement-pipeline",
       "stats": {
-        "total_files": 4194,
-        "total_size_kb": 71737.1,
-        "last_modified": "2026-03-03T14:15:18"
+        "files": 4194,
+        "size_kb": 71737.1,
+        "last_modified": "2026-03-03"
       }
     }
-  ],
-  "expenses": {
-    "rows": [
-      {
-        "date": "2026-01-15",
-        "category": "хостинг",
-        "description": "Пример: VPS сървър",
-        "amount_bgn": 30.0,
-        "project": "ai-agent"
-      },
-      {
-        "date": "2026-02-01",
-        "category": "абонамент",
-        "description": "Пример: GitHub Copilot",
-        "amount_bgn": 10.0,
-        "project": "general"
-      }
-    ],
-    "total_bgn": 40.0,
-    "by_category": {
-      "хостинг": 30.0,
-      "абонамент": 10.0
-    },
-    "by_project": {
-      "ai-agent": 30.0,
-      "general": 10.0
-    }
-  }
+  ]
 }
