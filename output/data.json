@@ -1,0 +1,199 @@
+{
+  "generated_at": "2026-04-02T13:32:57.216837",
+  "period": {
+    "from": "2026-01-02",
+    "to": "2026-04-02",
+    "months": 3
+  },
+  "projects": [
+    {
+      "name": "ai-agent",
+      "description": "AI агент / OpenClaw",
+      "type": "git",
+      "path": "/home/nikolay-zarov/ai-agent",
+      "stats": {
+        "commits_in_period": 2,
+        "lines_added": 3127,
+        "lines_removed": 87,
+        "files_changed_in_period": 39,
+        "total_files_in_repo": 39,
+        "last_commit": "2026-03-20 15:28:51 +0200 Add Claude Code agent, parallel queues, and notification fixes",
+        "current_branch": "main",
+        "recent_commit_messages": [
+          "Add Claude Code agent, parallel queues, and notification fixes",
+          "Initial commit — 24/7 AI agent system"
+        ]
+      }
+    },
+    {
+      "name": "tp-agent",
+      "description": "TP агент",
+      "type": "git",
+      "path": "/home/nikolay-zarov/tp-agent",
+      "stats": {
+        "commits_in_period": 1,
+        "lines_added": 8231,
+        "lines_removed": 0,
+        "files_changed_in_period": 109,
+        "total_files_in_repo": 109,
+        "last_commit": "2026-03-09 12:59:10 +0200 Initial commit — TP Agent v1.3 full backend + frontend",
+        "current_branch": "main",
+        "recent_commit_messages": [
+          "Initial commit — TP Agent v1.3 full backend + frontend"
+        ]
+      }
+    },
+    {
+      "name": "NemoClaw",
+      "description": "NemoClaw проект",
+      "type": "git",
+      "path": "/home/nikolay-zarov/NemoClaw",
+      "stats": {
+        "commits_in_period": 258,
+        "lines_added": 50060,
+        "lines_removed": 7615,
+        "files_changed_in_period": 330,
+        "total_files_in_repo": 246,
+        "last_commit": "2026-03-19 18:57:02 +0000 ci: add nightly E2E with inference test (#386)",
+        "current_branch": "main",
+        "recent_commit_messages": [
+          "ci: add nightly E2E with inference test (#386)",
+          "docs: add uninstall section to quickstart in README (#423)",
+          "docs: add discord channel to docs site (#416)",
+          "chore: add coderabbit instructions for docs (#421)",
+          "docs: fix the ref link to spark instruction, minor style fixes, add README to docs workflow (#392)",
+          "fix: gate sandbox registration on creation readiness and guard WSL name truncation (#229)",
+          "docs: link DGX Spark setup guide from README (#369)",
+          "docs: fix misleading OpenClaw note and remove unsupported deploy command (#370)",
+          "docs: add common installation troubleshooting entries (#378)",
+          "Reattach curl installer onboarding to tty (#377)",
+          "Create feature_request.yml (#372)",
+          "Create bug_report.yml (#371)",
+          "Enable managed local Ollama inference and add cloud/Ollama model selection (#295)",
+          "fix: parameterize sandbox name in setup.sh instead of hardcoding (#340)",
+          "update installer url for curl (#346)",
+          "ci: add docs build workflow for PRs (#334)",
+          "docs: refresh doc and start collecting troubleshooting items in a singular place (#331)",
+          "feat: add non-interactive mode for CI/CD onboarding (#318)",
+          "fix: propagate SANDBOX_NAME to telegram bridge and resolve openshell path (#222)",
+          "docs: document long-output CLI workaround (#327)"
+        ]
+      }
+    },
+    {
+      "name": "project-to-json",
+      "description": "Project to JSON инструмент",
+      "type": "git",
+      "path": "/home/nikolay-zarov/project-to-json",
+      "stats": {
+        "commits_in_period": 1,
+        "lines_added": 411837,
+        "lines_removed": 0,
+        "files_changed_in_period": 1250,
+        "total_files_in_repo": 2353,
+        "last_commit": "2026-02-09 13:24:55 +0200 Initial commit of universal converter",
+        "current_branch": "main",
+        "recent_commit_messages": [
+          "Initial commit of universal converter"
+        ]
+      }
+    },
+    {
+      "name": "schedule-generator",
+      "description": "График генератор",
+      "type": "git",
+      "path": "/home/nikolay-zarov/schedule-generator",
+      "stats": {
+        "commits_in_period": 76,
+        "lines_added": 26864,
+        "lines_removed": 2182,
+        "files_changed_in_period": 108,
+        "total_files_in_repo": 100,
+        "last_commit": "2026-03-23 11:30:49 +0200 test: cover all 6 uncovered lines in schedule_builder.py → 100%",
+        "current_branch": "main",
+        "recent_commit_messages": [
+          "test: cover all 6 uncovered lines in schedule_builder.py → 100%",
+          "test: add 24 unit tests for _detect_cycle (previously uncovered)",
+          "test: add 34 unit tests for _handle_sequence_answer (previously uncovered)",
+          "test: add 16 unit tests for _handle_confirm_change (previously uncovered)",
+          "test: add 11 unit tests for cascade guard + validate_schedule edge cases",
+          "refactor: replace 8 hardcoded timeout=120 with _API_TIMEOUT_SECONDS constant",
+          "test: add 22 unit tests for _handle_save_lesson (previously uncovered)",
+          "test: add 13 unit tests for get_all_text, get_converted_files, read_converted",
+          "fix: use parse_json_response in classify_files AI fallback + 4 tests",
+          "test: add 49 unit tests for ChatHandler pure handler methods",
+          "fix: correct AI prompt productivity rates to match verified productivities.md",
+          "fix: block schedule generation for out_of_scope projects (C2) + 8 unit tests",
+          "test: add 27 unit tests for AIProcessor pure methods (previously uncovered)",
+          "test: add 50 unit tests for SelfEvolution (previously uncovered)",
+          "test: add 19 unit tests for ScheduleBuilder.build_from_ai_response (previously uncovered)",
+          "test: add 34 unit tests for export_pdf.py utility functions (previously uncovered)",
+          "fix: use .get() in to_dataframe to prevent KeyError on partial AI output + 21 unit tests",
+          "fix: handle docs: commits in suggest_changelog_entry + 30 unit tests",
+          "fix: 3 bugs in _detect_intent_keywords + 44 unit tests",
+          "test: add 32 unit tests for AIRouter infrastructure (no API calls)"
+        ]
+      }
+    },
+    {
+      "name": "ai-projects/idea-gate",
+      "description": "Idea Gate проект",
+      "type": "folder",
+      "path": "/home/nikolay-zarov/ai-projects/idea-gate",
+      "stats": {
+        "total_files": 3795,
+        "total_size_kb": 66729.0,
+        "last_modified": "2026-03-23T12:00:01.339496"
+      }
+    },
+    {
+      "name": "ai-projects/office-assistant",
+      "description": "Office Assistant",
+      "type": "folder",
+      "path": "/home/nikolay-zarov/ai-projects/office-assistant",
+      "stats": {
+        "total_files": 11,
+        "total_size_kb": 249578.8,
+        "last_modified": "2026-04-01T14:22:24.768623"
+      }
+    },
+    {
+      "name": "procurement-pipeline",
+      "description": "Procurement Pipeline",
+      "type": "folder",
+      "path": "/home/nikolay-zarov/procurement-pipeline",
+      "stats": {
+        "total_files": 4194,
+        "total_size_kb": 71737.1,
+        "last_modified": "2026-03-03T14:15:18"
+      }
+    }
+  ],
+  "expenses": {
+    "rows": [
+      {
+        "date": "2026-01-15",
+        "category": "хостинг",
+        "description": "Пример: VPS сървър",
+        "amount_bgn": 30.0,
+        "project": "ai-agent"
+      },
+      {
+        "date": "2026-02-01",
+        "category": "абонамент",
+        "description": "Пример: GitHub Copilot",
+        "amount_bgn": 10.0,
+        "project": "general"
+      }
+    ],
+    "total_bgn": 40.0,
+    "by_category": {
+      "хостинг": 30.0,
+      "абонамент": 10.0
+    },
+    "by_project": {
+      "ai-agent": 30.0,
+      "general": 10.0
+    }
+  }
+}

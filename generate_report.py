@@ -36,9 +36,62 @@ def rating_color(rating_text: str) -> str:
     return "orange"
 
 
+def markdown_to_html(text: str) -> str:
+    """Прост Markdown → HTML конвертор."""
+    import re
+    lines = text.split("\n")
+    result = []
+    in_list = False
+
+    for line in lines:
+        if line.startswith("### "):
+            if in_list:
+                result.append("</ul>")
+                in_list = False
+            result.append(f"<h3>{line[4:]}</h3>")
+        elif line.startswith("## "):
+            if in_list:
+                result.append("</ul>")
+                in_list = False
+            result.append(f"<h2>{line[3:]}</h2>")
+        elif line.startswith("# "):
+            if in_list:
+                result.append("</ul>")
+                in_list = False
+            result.append(f"<h2>{line[2:]}</h2>")
+        elif line.startswith("- ") or line.startswith("* "):
+            if not in_list:
+                result.append("<ul>")
+                in_list = True
+            content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line[2:])
+            result.append(f"<li>{content}</li>")
+        elif line.strip() == "":
+            if in_list:
+                result.append("</ul>")
+                in_list = False
+            result.append("")
+        else:
+            if in_list:
+                result.append("</ul>")
+                in_list = False
+            content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line)
+            content = re.sub(r'\*(.+?)\*', r'<em>\1</em>', content)
+            result.append(f"<p>{content}</p>")
+
+    if in_list:
+        result.append("</ul>")
+
+    return "\n".join(result)
+
+
 def generate_html(analysis_data: dict, raw_data: dict) -> str:
     period = analysis_data["period"]
     a = analysis_data["analysis"]
+
+    # Ако AI е върнал Markdown вместо JSON
+    if "raw_response" in a and len(a) == 1:
+        return generate_html_markdown(analysis_data, raw_data)
+
 
     # Дата на генериране
     gen_date = datetime.now().strftime("%d.%m.%Y %H:%M")
@@ -254,6 +307,99 @@ def generate_html(analysis_data: dict, raw_data: dict) -> str:
 </html>"""
 
     return html
+
+
+def generate_html_markdown(analysis_data: dict, raw_data: dict) -> str:
+    """Генерира HTML когато AI е върнал Markdown."""
+    period = analysis_data["period"]
+    a = analysis_data["analysis"]
+    gen_date = datetime.now().strftime("%d.%m.%Y %H:%M")
+    expenses = raw_data["expenses"]
+
+    analysis_html = markdown_to_html(a["raw_response"])
+
+    expenses_rows = ""
+    for row in expenses.get("rows", []):
+        expenses_rows += f"""
+        <tr>
+          <td>{row['date']}</td>
+          <td>{row['category']}</td>
+          <td>{row['description']}</td>
+          <td style="text-align:right;font-weight:600">{row['amount_bgn']:.2f} лв.</td>
+          <td>{row['project']}</td>
+        </tr>"""
+
+    return f"""<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тримесечен отчет {period['from']} – {period['to']}</title>
+<style>
+  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f9fafb; color: #111827; line-height: 1.7; }}
+  .container {{ max-width: 900px; margin: 40px auto; padding: 0 20px 60px; }}
+  .header {{ background: #1e293b; color: white; padding: 32px; border-radius: 12px; margin-bottom: 32px; }}
+  .header h1 {{ font-size: 1.6em; font-weight: 700; }}
+  .header p {{ color: #94a3b8; margin-top: 4px; }}
+  .section {{ background: white; border-radius: 12px; padding: 28px 32px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }}
+  .section h2 {{ font-size: 1.1em; font-weight: 700; color: #1e293b; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 20px; }}
+  .analysis h2 {{ font-size: 1.05em; font-weight: 700; color: #1e293b; margin: 20px 0 8px; padding-top: 12px; border-top: 1px solid #f1f5f9; }}
+  .analysis h3 {{ font-size: 0.95em; font-weight: 700; color: #374151; margin: 16px 0 6px; }}
+  .analysis p {{ margin: 6px 0; color: #374151; }}
+  .analysis ul {{ margin: 8px 0 8px 20px; }}
+  .analysis li {{ margin: 4px 0; color: #374151; }}
+  table {{ width: 100%; border-collapse: collapse; font-size: 0.9em; }}
+  th {{ background: #f8fafc; text-align: left; padding: 10px 12px; font-weight: 600; color: #475569; border-bottom: 2px solid #e2e8f0; }}
+  td {{ padding: 10px 12px; border-bottom: 1px solid #f1f5f9; }}
+  .total-row td {{ font-weight: 700; font-size: 1.05em; background: #f8fafc; }}
+  .footer {{ text-align: center; color: #9ca3af; font-size: 0.8em; margin-top: 40px; }}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>Тримесечен отчет</h1>
+    <p>Период: {period['from']} → {period['to']} &nbsp;|&nbsp; Генериран: {gen_date}</p>
+  </div>
+
+  <div class="section">
+    <h2>AI Анализ</h2>
+    <div class="analysis">
+      {analysis_html}
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Разходи за периода</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Дата</th>
+          <th>Категория</th>
+          <th>Описание</th>
+          <th style="text-align:right">Сума</th>
+          <th>Проект</th>
+        </tr>
+      </thead>
+      <tbody>
+        {expenses_rows}
+        <tr class="total-row">
+          <td colspan="3">Общо</td>
+          <td style="text-align:right">{expenses.get('total_bgn', 0):.2f} лв.</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    Тримесечен отчет | Генериран автоматично | {gen_date}
+  </div>
+</div>
+</body>
+</html>"""
 
 
 def generate(analysis_data: dict = None, raw_data: dict = None):
