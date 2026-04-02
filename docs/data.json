@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T15:57:09.746750",
+  "generated_at": "2026-04-02T16:06:40.790785",
   "period": {
     "from": "2026-01-02",
     "to": "2026-04-02",
@@ -218,6 +218,29 @@
   },
   "projects": [
     {
+      "name": "quarterly-report",
+      "description": "Quarterly performance report dashboard",
+      "type": "git",
+      "stats": {
+        "commits": 9,
+        "lines_added": 3158,
+        "lines_removed": 1451,
+        "last_commit": "2026-04-02 16:01:49 +0300 Dashboard: remove badges, chat on top, settings modal instead of visible key",
+        "branch": "master",
+        "recent_commits": [
+          "Dashboard: remove badges, chat on top, settings modal instead of visible key",
+          "data: update + fix office-assistant duplicate",
+          "Dashboard: Bulgarian UI, project descriptions, chat, layout rework",
+          "Add GitHub Pages dashboard with Chart.js",
+          "Auto-discover all GitHub repos via gh CLI — no manual config needed",
+          "Add website + xml-json repos, auto git pull before scan",
+          "Simplify: премахнати analyze.py, generate_report.py, expenses.csv",
+          "Fix: OpenRouter support, markdown fallback, HTML renderer",
+          "Initial: тримесечен отчет v1.0"
+        ]
+      }
+    },
+    {
       "name": "office-assistant",
       "description": "AI офис асистент — FastAPI backend, task queue, AI модели",
       "type": "git",
@@ -229,27 +252,6 @@
         "branch": "master",
         "recent_commits": [
           "Initial commit — AI office assistant v1.0"
-        ]
-      }
-    },
-    {
-      "name": "quarterly-report",
-      "description": "Quarterly performance report dashboard",
-      "type": "git",
-      "stats": {
-        "commits": 7,
-        "lines_added": 2911,
-        "lines_removed": 1271,
-        "last_commit": "2026-04-02 15:48:19 +0300 Dashboard: Bulgarian UI, project descriptions, chat, layout rework",
-        "branch": "master",
-        "recent_commits": [
-          "Dashboard: Bulgarian UI, project descriptions, chat, layout rework",
-          "Add GitHub Pages dashboard with Chart.js",
-          "Auto-discover all GitHub repos via gh CLI — no manual config needed",
-          "Add website + xml-json repos, auto git pull before scan",
-          "Simplify: премахнати analyze.py, generate_report.py, expenses.csv",
-          "Fix: OpenRouter support, markdown fallback, HTML renderer",
-          "Initial: тримесечен отчет v1.0"
         ]
       }
     },

@@ -167,6 +167,7 @@
 </div>
 
 <script>
+window.CHAT_KEY = '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';
 const COLORS = ['#38bdf8','#34d399','#fb923c','#a78bfa','#f472b6','#facc15','#4ade80','#f87171','#818cf8','#2dd4bf','#e879f9','#a3e635'];
 
 const PROJECT_DESCRIPTIONS = {
@@ -267,8 +268,8 @@ async function load() {
   }).join('');
 
   // Load saved key
-  const saved = localStorage.getItem('or_key');
-  if (saved) document.getElementById('apiKeyInput').value = saved;
+  const saved = localStorage.getItem('or_key') || window.CHAT_KEY || '';
+  if (saved) { localStorage.setItem('or_key', saved); document.getElementById('apiKeyInput').value = saved; }
 }
 
 // Settings
