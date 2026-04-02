@@ -179,7 +179,9 @@ const PROJECT_DESCRIPTIONS = {
   'NemoClaw':         'OpenClaw — open-source sandbox среда за безопасно стартиране на автономни AI агенти с inference през NVIDIA cloud. Осигурява изолирана, контролирана среда за изпълнение на агенти без риск за основната система. Ключова инфраструктурна компонента за целия AI стек.',
   'aiAgents':         'Централна 24/7 AI агент система — оркестрира Claude Code agent, паралелни task опашки и Telegram нотификации. Служи като инфраструктурна основа, върху която работят останалите агенти. Поддържа множество AI модели едновременно (Claude, Groq, OpenRouter).',
   'ai-agent':         'Централна 24/7 AI агент система — оркестрира Claude Code agent, паралелни task опашки и Telegram нотификации. Служи като инфраструктурна основа, върху която работят останалите агенти. Поддържа множество AI модели едновременно (Claude, Groq, OpenRouter).',
-  'office-assistant': 'AI офис асистент с FastAPI backend и асинхронна task queue. Приема задача с прикачен документ, AI модел (Groq/Qwen) я обработва и връща резултат. Активно използван — обработва реални заявки за анализ на бюджети и документи.',
+  'office-assistant':   'AI офис асистент с FastAPI backend и асинхронна task queue. Приема задача с прикачен документ, AI модел (Groq/Qwen) я обработва и връща резултат. Активно използван — обработва реални заявки за анализ на бюджети и документи.',
+  'ai-projects/idea-gate': 'Платформа за управление и валидиране на бизнес идеи с AI. Структурира, оценява и приоритизира идеи по зададени критерии — пазарен потенциал, сложност на изпълнение, ресурси. Помага на екипа да взема по-обосновани решения кои инициативи да развива.',
+  'quarterly-report':   'Инструментът, с който четете този отчет. Автоматично събира данни от всички GitHub репота и финансовия Excel, генерира визуален dashboard и го публикува онлайн. Пуска се с една команда веднъж на тримесечие.',
 };
 
 let reportData = null;
@@ -250,8 +252,16 @@ async function load() {
     }
   });
 
-  // Projects grid — без badges
-  document.getElementById('projectsGrid').innerHTML = d.projects.map(p => {
+  // Projects grid — сортиране по commits+редове, quarterly-report накрая
+  const sorted = [...d.projects].sort((a, b) => {
+    if (a.name === 'quarterly-report') return 1;
+    if (b.name === 'quarterly-report') return -1;
+    const scoreA = (a.stats.commits||0) * 10 + (a.stats.lines_added||a.stats.files||0) / 1000;
+    const scoreB = (b.stats.commits||0) * 10 + (b.stats.lines_added||b.stats.files||0) / 1000;
+    return scoreB - scoreA;
+  });
+
+  document.getElementById('projectsGrid').innerHTML = sorted.map(p => {
     const s = p.stats;
     const desc = PROJECT_DESCRIPTIONS[p.name] || p.description || '—';
     let statsHtml;
