@@ -47,10 +47,23 @@
       "path": "/home/nikolay-zarov/procurement-pipeline",
       "type": "folder",
       "description": "Procurement Pipeline"
+    },
+    {
+      "name": "website",
+      "path": "/home/nikolay-zarov/website",
+      "type": "git",
+      "github": "git@github.com:agentsaibuild-boop/website.git",
+      "description": "Уебсайт"
+    },
+    {
+      "name": "xml-json",
+      "path": "/home/nikolay-zarov/xml-json",
+      "type": "git",
+      "github": "git@github.com:agentsaibuild-boop/xml-json.git",
+      "description": "XML→JSON конвертор"
     }
   ],
   "git_author": "",
-  "expenses_file": "expenses.csv",
   "output_dir": "output",
   "default_period_months": 3
 }

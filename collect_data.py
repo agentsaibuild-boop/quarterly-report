@@ -163,6 +163,24 @@ def folder_stats(folder_path):
     }
 
 
+# ── Git pull ─────────────────────────────────────────────────────────────────
+
+def pull_repos(projects):
+    """git pull за всички проекти с github поле в config."""
+    for p in projects:
+        if not p.get("github"):
+            continue
+        path = Path(p["path"])
+        if not (path / ".git").exists():
+            print(f"  Клонирам {p['name']}...")
+            subprocess.run(["git", "clone", p["github"], str(path)],
+                           capture_output=True)
+        else:
+            print(f"  git pull {p['name']}...")
+            subprocess.run(["git", "pull", "--quiet"],
+                           cwd=str(path), capture_output=True)
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def collect(months: int = 3):
@@ -173,6 +191,10 @@ def collect(months: int = 3):
     until = end.strftime("%Y-%m-%d")
 
     print(f"Период: {since} → {until}")
+
+    # Обновява репотата от GitHub
+    print("Обновявам репота от GitHub...")
+    pull_repos(config["projects"])
 
     # Финанси от Excel
     print("Чета Excel...")

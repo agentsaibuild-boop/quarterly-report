@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T14:05:35.747695",
+  "generated_at": "2026-04-02T14:26:45.565838",
   "period": {
     "from": "2026-01-02",
     "to": "2026-04-02",
@@ -349,6 +349,53 @@
         "files": 4194,
         "size_kb": 71737.1,
         "last_modified": "2026-03-03"
+      }
+    },
+    {
+      "name": "website",
+      "description": "Уебсайт",
+      "type": "git",
+      "stats": {
+        "commits": 18,
+        "lines_added": 6763,
+        "lines_removed": 93,
+        "last_commit": "2026-03-16 08:22:09 +0200 Update primary button color: lighter blue #2A52CC (hover: #1B398F)",
+        "branch": "main",
+        "recent_commits": [
+          "Update primary button color: lighter blue #2A52CC (hover: #1B398F)",
+          "Add V2 app: Next.js 15 + Auth + 2FA + Stripe + Prisma scaffold",
+          "Fix metrics counter: observe each item individually, threshold 0.2, plain JS (no TS generics)",
+          "Add count-up animation to metrics section on scroll-into-view",
+          "Add tech background to hero: dot-grid pattern + abstract SVG decoration (rings, nodes, dashed lines)",
+          "Fix scroll-reveal: rename visible to is-visible (conflict with Tailwind utility)",
+          "Add scroll-reveal animations, hero entrance, smooth FAQ, touch feedback",
+          "Fix mobile: show hero visual at 640px+, fix CTA buttons overflow on mobile",
+          "Fix FAQ contact link: kontakt (latin) not контакт (cyrillic)",
+          "Fix all remaining hardcoded links — prilozheniya.astro + cyrillic redirects",
+          "Fix all hardcoded links in index.astro",
+          "Fix FAQ contact link base path",
+          "Fix base path trailing slash",
+          "Fix all hardcoded links for GitHub Pages base path",
+          "Fix internal links for GitHub Pages base path"
+        ]
+      }
+    },
+    {
+      "name": "xml-json",
+      "description": "XML→JSON конвертор",
+      "type": "git",
+      "stats": {
+        "commits": 4,
+        "lines_added": 302,
+        "lines_removed": 20,
+        "last_commit": "2026-02-22 23:10:56 +0200 добавен upload и download на файл",
+        "branch": "master",
+        "recent_commits": [
+          "добавен upload и download на файл",
+          "добавен уеб интерфейс",
+          "добавен converter v2 с меню",
+          "purvi commit xml to json"
+        ]
       }
     }
   ]
