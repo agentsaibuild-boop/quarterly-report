@@ -14,12 +14,6 @@
       "description": "24/7 AI агент система — Claude Code agent, паралелни опашки, нотификации"
     },
     {
-      "name": "office-assistant",
-      "path": "/home/nikolay-zarov/ai-projects/office-assistant",
-      "type": "git",
-      "description": "AI офис асистент — FastAPI backend, задачи с AI модели, файлов анализ"
-    },
-    {
       "name": "ai-projects/idea-gate",
       "path": "/home/nikolay-zarov/ai-projects/idea-gate",
       "type": "folder",
