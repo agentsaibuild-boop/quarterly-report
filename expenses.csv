@@ -1,0 +1,5 @@
+date,category,description,amount_bgn,project
+2026-01-01,абонамент,Пример: Claude Pro,50,general
+2026-01-01,абонамент,Пример: ChatGPT Plus,25,general
+2026-01-15,хостинг,Пример: VPS сървър,30,ai-agent
+2026-02-01,абонамент,Пример: GitHub Copilot,10,general
