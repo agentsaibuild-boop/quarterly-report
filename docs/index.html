@@ -22,7 +22,7 @@
 
   .wrap { max-width: 1400px; margin: 0 auto; padding: 28px 32px 60px; display: flex; flex-direction: column; gap: 20px; }
   .row { display: grid; gap: 20px; }
-  .col-4 { grid-template-columns: repeat(4, 1fr); }
+  .col-4 { grid-template-columns: repeat(2, 1fr); }
   .col-2   { grid-template-columns: repeat(2, 1fr); }
   .col-2-1 { grid-template-columns: 2fr 1fr; }
 
@@ -173,9 +173,7 @@ async function load() {
   // KPIs
   document.getElementById('kpis').innerHTML = `
     <div class="card"><h2>Общи разходи</h2><div class="kpi-value accent">€${totalAll.toLocaleString('bg-BG',{maximumFractionDigits:0})}</div><div class="kpi-sub">${months.length} месеца</div></div>
-    <div class="card"><h2>Приходи</h2><div class="kpi-value red">€0</div><div class="kpi-sub">Q1 2026</div></div>
-    <div class="card"><h2>Общо commits</h2><div class="kpi-value green">${totalCommits}</div><div class="kpi-sub">${gitProjects.length} git проекта</div></div>
-    <div class="card"><h2>Активни проекти</h2><div class="kpi-value accent">${activeCount}</div><div class="kpi-sub">>5 commits за периода</div></div>`;
+    <div class="card"><h2>Приходи</h2><div class="kpi-value red">€0</div><div class="kpi-sub">Q1 2026</div></div>`;
 
   // Expenses by month
   new Chart(document.getElementById('expensesChart'), {
