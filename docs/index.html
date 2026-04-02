@@ -10,7 +10,7 @@
     --bg: #0f172a; --surface: #1e293b; --surface2: #263348;
     --border: #334155; --text: #f1f5f9; --muted: #94a3b8;
     --accent: #38bdf8; --green: #34d399; --red: #f87171;
-    --orange: #fb923c; --purple: #a78bfa;
+    --orange: #fb923c;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
@@ -21,76 +21,76 @@
   .period { font-size: 0.8em; color: var(--muted); background: var(--surface2); padding: 4px 12px; border-radius: 20px; }
 
   .wrap { max-width: 1400px; margin: 0 auto; padding: 28px 32px 60px; display: flex; flex-direction: column; gap: 20px; }
-
   .row { display: grid; gap: 20px; }
   .col-4 { grid-template-columns: repeat(4, 1fr); }
-  .col-3 { grid-template-columns: repeat(3, 1fr); }
-  .col-2 { grid-template-columns: repeat(2, 1fr); }
+  .col-2   { grid-template-columns: repeat(2, 1fr); }
   .col-2-1 { grid-template-columns: 2fr 1fr; }
-  .col-1-2 { grid-template-columns: 1fr 2fr; }
-  .span-2 { grid-column: span 2; }
-  .span-3 { grid-column: span 3; }
 
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; }
   .card h2 { font-size: 0.72em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 14px; }
 
   .kpi-value { font-size: 2em; font-weight: 800; letter-spacing: -0.03em; }
-  .kpi-sub { font-size: 0.78em; color: var(--muted); margin-top: 4px; }
-  .red { color: var(--red); } .green { color: var(--green); } .accent { color: var(--accent); }
+  .kpi-sub   { font-size: 0.78em; color: var(--muted); margin-top: 4px; }
+  .red    { color: var(--red); }
+  .green  { color: var(--green); }
+  .accent { color: var(--accent); }
 
-  .chart-wrap { position: relative; height: 240px; }
+  .chart-wrap      { position: relative; height: 240px; }
   .chart-wrap.tall { height: 320px; }
 
   table { width: 100%; border-collapse: collapse; font-size: 0.84em; }
   th { text-align: left; padding: 7px 10px; color: var(--muted); font-size: 0.72em; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
-  td { padding: 9px 10px; border-bottom: 1px solid #1e293b; vertical-align: top; }
+  td { padding: 9px 10px; border-bottom: 1px solid #1e293b; }
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: var(--surface2); }
 
-  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.7em; font-weight: 700; white-space: nowrap; }
-  .b-active { background: #064e3b; color: var(--green); }
-  .b-low    { background: #431407; color: var(--orange); }
-  .b-idle   { background: #1e1b4b; color: var(--muted); }
-  .b-folder { background: #1e3a5f; color: var(--accent); }
-
-  /* Projects grid */
+  /* Projects */
   .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
   .proj-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
-  .proj-card .proj-name { font-weight: 700; font-size: 0.95em; }
-  .proj-card .proj-desc { font-size: 0.8em; color: var(--muted); line-height: 1.5; }
-  .proj-card .proj-stats { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
-  .proj-stat { font-size: 0.75em; background: var(--surface); padding: 3px 8px; border-radius: 6px; color: var(--text); }
+  .proj-name  { font-weight: 700; font-size: 0.95em; }
+  .proj-desc  { font-size: 0.8em; color: var(--muted); line-height: 1.55; }
+  .proj-stats { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+  .proj-stat  { font-size: 0.75em; background: var(--surface); padding: 3px 8px; border-radius: 6px; }
   .proj-stat span { color: var(--green); font-weight: 700; }
 
   /* Chat */
-  .chat-box { display: flex; flex-direction: column; gap: 0; }
-  .chat-messages { min-height: 200px; max-height: 400px; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); margin-bottom: 12px; }
-  .msg { max-width: 85%; padding: 10px 14px; border-radius: 10px; font-size: 0.85em; line-height: 1.6; white-space: pre-wrap; }
-  .msg.user { align-self: flex-end; background: #1d4ed8; color: white; border-radius: 10px 10px 2px 10px; }
-  .msg.ai   { align-self: flex-start; background: var(--surface2); color: var(--text); border-radius: 10px 10px 10px 2px; }
+  .chat-card { background: var(--surface); border: 2px solid var(--accent); border-radius: 12px; padding: 24px; }
+  .chat-card h2 { font-size: 0.9em; font-weight: 700; color: var(--accent); margin-bottom: 16px; letter-spacing: 0; text-transform: none; }
+  .chat-messages { min-height: 180px; max-height: 380px; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); margin-bottom: 12px; }
+  .msg { max-width: 82%; padding: 10px 14px; border-radius: 10px; font-size: 0.86em; line-height: 1.6; white-space: pre-wrap; }
+  .msg.user   { align-self: flex-end; background: #1d4ed8; color: #fff; border-radius: 10px 10px 2px 10px; }
+  .msg.ai     { align-self: flex-start; background: var(--surface2); color: var(--text); border-radius: 10px 10px 10px 2px; }
   .msg.system { align-self: center; color: var(--muted); font-size: 0.78em; font-style: italic; background: none; padding: 4px; }
-  .chat-input-row { display: flex; gap: 8px; }
-  .chat-input-row input { flex: 1; background: var(--surface2); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 10px 14px; font-size: 0.88em; outline: none; }
-  .chat-input-row input:focus { border-color: var(--accent); }
-  .chat-input-row button { background: var(--accent); color: #0f172a; border: none; border-radius: 8px; padding: 10px 18px; font-weight: 700; font-size: 0.88em; cursor: pointer; white-space: nowrap; }
-  .chat-input-row button:hover { opacity: 0.85; }
-  .chat-input-row button:disabled { opacity: 0.4; cursor: not-allowed; }
-  .key-row { display: flex; gap: 8px; margin-bottom: 10px; align-items: center; }
-  .key-row input { flex: 1; background: var(--surface2); border: 1px solid var(--border); color: var(--muted); border-radius: 8px; padding: 7px 12px; font-size: 0.8em; font-family: monospace; outline: none; }
-  .key-row input:focus { border-color: var(--accent); color: var(--text); }
-  .key-row label { font-size: 0.75em; color: var(--muted); white-space: nowrap; }
-  .key-row .save-btn { background: var(--surface2); color: var(--accent); border: 1px solid var(--accent); border-radius: 6px; padding: 6px 12px; font-size: 0.78em; cursor: pointer; }
+  .chat-row   { display: flex; gap: 8px; }
+  .chat-row input { flex: 1; background: var(--surface2); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 11px 14px; font-size: 0.88em; outline: none; }
+  .chat-row input:focus { border-color: var(--accent); }
+  .chat-row button { background: var(--accent); color: #0f172a; border: none; border-radius: 8px; padding: 11px 22px; font-weight: 700; font-size: 0.88em; cursor: pointer; }
+  .chat-row button:hover    { opacity: 0.85; }
+  .chat-row button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* Settings modal */
+  .settings-btn { background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 6px; padding: 4px 10px; font-size: 0.75em; cursor: pointer; float: right; margin-top: -2px; }
+  .settings-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .modal-overlay { display: none; position: fixed; inset: 0; background: #000a; z-index: 100; align-items: center; justify-content: center; }
+  .modal-overlay.open { display: flex; }
+  .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; width: 400px; max-width: 90vw; display: flex; flex-direction: column; gap: 12px; }
+  .modal h3 { font-size: 0.9em; font-weight: 700; }
+  .modal input { background: var(--surface2); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 9px 12px; font-size: 0.85em; font-family: monospace; outline: none; width: 100%; }
+  .modal input:focus { border-color: var(--accent); }
+  .modal-btns { display: flex; gap: 8px; justify-content: flex-end; }
+  .modal-btns button { border-radius: 7px; padding: 7px 16px; font-size: 0.82em; font-weight: 600; cursor: pointer; border: none; }
+  .btn-save   { background: var(--accent); color: #0f172a; }
+  .btn-cancel { background: var(--surface2); color: var(--muted); }
 
   footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.75em; border-top: 1px solid var(--border); }
 
   @media(max-width:1000px) {
-    .col-4,.col-3 { grid-template-columns: 1fr 1fr; }
-    .col-2-1,.col-1-2 { grid-template-columns: 1fr; }
+    .col-4 { grid-template-columns: 1fr 1fr; }
+    .col-2-1 { grid-template-columns: 1fr; }
     .projects-grid { grid-template-columns: 1fr 1fr; }
-    .span-2,.span-3 { grid-column: span 1; }
   }
   @media(max-width:600px) {
-    .col-4,.col-3,.col-2,.col-2-1,.col-1-2 { grid-template-columns: 1fr; }
+    .col-4,.col-2,.col-2-1 { grid-template-columns: 1fr; }
     .projects-grid { grid-template-columns: 1fr; }
     .wrap { padding: 16px; }
   }
@@ -107,6 +107,20 @@
 
   <!-- KPIs -->
   <div class="row col-4" id="kpis"></div>
+
+  <!-- ЧАТ — веднага след KPIs -->
+  <div class="chat-card">
+    <h2>Питай за отчета
+      <button class="settings-btn" onclick="document.getElementById('settingsModal').classList.add('open')">⚙ настройки</button>
+    </h2>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg system">Задай въпрос — например: Кои са най-активните проекти? Как стоим с разходите? Какво препоръчваш за следващото тримесечие?</div>
+    </div>
+    <div class="chat-row">
+      <input type="text" id="chatInput" placeholder="Въведи въпрос..." onkeydown="if(event.key==='Enter')sendMsg()" />
+      <button id="sendBtn" onclick="sendMsg()">Изпрати</button>
+    </div>
+  </div>
 
   <!-- Разходи по месеци + Разбивка -->
   <div class="row col-2-1">
@@ -135,62 +149,54 @@
     <div class="projects-grid" id="projectsGrid"></div>
   </div>
 
-  <!-- Чат -->
-  <div class="card">
-    <h2>Питай за отчета</h2>
-    <div class="key-row">
-      <label>OpenRouter API ключ:</label>
-      <input type="password" id="apiKey" placeholder="sk-or-v1-..." />
-      <button class="save-btn" onclick="saveKey()">Запази</button>
-    </div>
-    <div class="chat-box">
-      <div class="chat-messages" id="chatMessages">
-        <div class="msg system">Задай въпрос за данните в отчета — разходи, проекти, тенденции.</div>
-      </div>
-      <div class="chat-input-row">
-        <input type="text" id="chatInput" placeholder="Например: Кой проект е най-активен? Как стоят разходите?" onkeydown="if(event.key==='Enter')sendMsg()" />
-        <button id="sendBtn" onclick="sendMsg()">Изпрати</button>
-      </div>
-    </div>
-  </div>
-
 </div>
 
 <footer id="footer">Генериран: —</footer>
+
+<!-- Settings modal -->
+<div class="modal-overlay" id="settingsModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <h3>Настройки на чата</h3>
+    <label style="font-size:0.8em;color:var(--muted)">OpenRouter API ключ</label>
+    <input type="password" id="apiKeyInput" placeholder="sk-or-v1-..." />
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="document.getElementById('settingsModal').classList.remove('open')">Затвори</button>
+      <button class="btn-save" onclick="saveKey()">Запази</button>
+    </div>
+  </div>
+</div>
 
 <script>
 const COLORS = ['#38bdf8','#34d399','#fb923c','#a78bfa','#f472b6','#facc15','#4ade80','#f87171','#818cf8','#2dd4bf','#e879f9','#a3e635'];
 
 const PROJECT_DESCRIPTIONS = {
-  'website': 'SaaS платформа AIBUILD AGENTS за строителния сектор. Включва публичен маркетинг сайт (Astro 5) и вътрешна уеб апликация с автентикация (2FA), Stripe плащания и каталог от AI приложения. Целта е да даде на строителни компании и инженери достъп до AI агенти за обработка на техническа документация и изготвяне на оферти.',
-  'calculator': 'FTE Hypothesis Validator — бизнес инструмент, който математически валидира дали внедряването на AI приложение може реално да намали брой служители. Пресмята в три сценария (оптимистичен, реалистичен, песимистичен) дали спестените часове са достатъчни за реална редукция на екипа. Инструмент за продажбени разговори и консултации с клиенти.',
-  'schedule-generator': 'AI-базиран генератор на строителни графици с Gantt визуализация и MS Project XML export. Потребителят отговаря на въпросник за операции, ресурси и паралелни екипи — системата генерира автоматично оптимизиран график. Най-зрелият продукт в портфолиото, близо до production-ready.',
-  'tp-agent': 'Агент за автоматично изготвяне на технически предложения (TP) за обществени поръчки. Анализира документация, структурира информация и генерира готово техническо предложение. Версия 1.3 с пълен backend и frontend — стартиран, предстои активна разработка.',
-  'xml-json': 'Конвертор XML→JSON, стъпка 1 от pipeline-а на строителния агент. Обработва строителна документация и я превежда в структуриран JSON формат за последваща обработка от AI. Завършен помощен инструмент с уеб интерфейс.',
-  'NemoClaw': 'OpenClaw — open-source sandbox среда (NVIDIA) за безопасно стартиране на автономни AI агенти с inference през NVIDIA cloud. Осигурява изолирана, контролирана среда за изпълнение на агенти без риск за основната система. Ключова инфраструктурна компонента.',
-  'aiAgents': 'Централна 24/7 AI агент система — оркестрира Claude Code agent, паралелни task опашки и Telegram нотификации. Служи като инфраструктурна основа, върху която работят останалите агенти. Поддържа множество AI модели едновременно (Claude, Groq, OpenRouter).',
-  'ai-agent': 'Централна 24/7 AI агент система — оркестрира Claude Code agent, паралелни task опашки и Telegram нотификации. Служи като инфраструктурна основа, върху която работят останалите агенти. Поддържа множество AI модели едновременно (Claude, Groq, OpenRouter).',
-  'office-assistant': 'AI офис асистент с FastAPI backend и асинхронна task queue. Приема задача с прикачен документ, AI модел (Groq/Qwen) я обработва и връща резултат. Активно използван — обработва реални заявки за анализ на бюджети и документи. В активна разработка.',
+  'website':          'SaaS платформа AIBUILD AGENTS за строителния сектор. Включва публичен маркетинг сайт и вътрешна уеб апликация с автентикация (2FA), Stripe плащания и каталог от AI приложения. Дава на строителни компании и инженери достъп до AI агенти за обработка на техническа документация и изготвяне на оферти.',
+  'calculator':       'FTE Hypothesis Validator — бизнес инструмент, който математически валидира дали внедряването на AI може реално да намали брой служители. Пресмята в три сценария (оптимистичен, реалистичен, песимистичен) дали спестените часове са достатъчни за реална редукция на екипа. Инструмент за продажбени разговори и консултации с клиенти.',
+  'schedule-generator':'AI-базиран генератор на строителни графици с Gantt визуализация и MS Project XML export. Потребителят отговаря на въпросник за операции, ресурси и паралелни екипи — системата генерира автоматично оптимизиран график. Най-зрелият продукт в портфолиото, близо до production-ready.',
+  'tp-agent':         'Агент за автоматично изготвяне на технически предложения за обществени поръчки. Анализира документация, структурира информация и генерира готово техническо предложение. Версия 1.3 с пълен backend и frontend — стартиран, предстои активна разработка.',
+  'xml-json':         'Конвертор XML→JSON, стъпка 1 от pipeline-а на строителния агент. Обработва строителна документация и я превежда в структуриран JSON формат за последваща обработка от AI. Завършен помощен инструмент с уеб интерфейс.',
+  'NemoClaw':         'OpenClaw — open-source sandbox среда за безопасно стартиране на автономни AI агенти с inference през NVIDIA cloud. Осигурява изолирана, контролирана среда за изпълнение на агенти без риск за основната система. Ключова инфраструктурна компонента за целия AI стек.',
+  'aiAgents':         'Централна 24/7 AI агент система — оркестрира Claude Code agent, паралелни task опашки и Telegram нотификации. Служи като инфраструктурна основа, върху която работят останалите агенти. Поддържа множество AI модели едновременно (Claude, Groq, OpenRouter).',
+  'ai-agent':         'Централна 24/7 AI агент система — оркестрира Claude Code agent, паралелни task опашки и Telegram нотификации. Служи като инфраструктурна основа, върху която работят останалите агенти. Поддържа множество AI модели едновременно (Claude, Groq, OpenRouter).',
+  'office-assistant': 'AI офис асистент с FastAPI backend и асинхронна task queue. Приема задача с прикачен документ, AI модел (Groq/Qwen) я обработва и връща резултат. Активно използван — обработва реални заявки за анализ на бюджети и документи.',
 };
 
 let reportData = null;
 
-// ── Load data ────────────────────────────────────────────────────────────────
 async function load() {
   const res = await fetch('data.json');
   reportData = await res.json();
   const d = reportData;
-
-  document.getElementById('period-label').textContent = `${d.period.from} → ${d.period.to}`;
-  document.getElementById('footer').textContent = `Генериран: ${new Date(d.generated_at).toLocaleString('bg-BG')}`;
-
   const fin = d.finances;
   const months = fin.months;
   const totals = fin.totals_per_month;
   const totalAll = Object.values(totals).reduce((a,b)=>a+b,0);
-  const gitProjects = d.projects.filter(p => p.type==='git');
+  const gitProjects = d.projects.filter(p=>p.type==='git');
   const totalCommits = gitProjects.reduce((a,p)=>a+(p.stats.commits||0),0);
   const activeCount = gitProjects.filter(p=>(p.stats.commits||0)>5).length;
+
+  document.getElementById('period-label').textContent = `${d.period.from} → ${d.period.to}`;
+  document.getElementById('footer').textContent = `Генериран: ${new Date(d.generated_at).toLocaleString('bg-BG')}`;
 
   // KPIs
   document.getElementById('kpis').innerHTML = `
@@ -204,25 +210,21 @@ async function load() {
     type: 'bar',
     data: {
       labels: months,
-      datasets: [{
-        label: 'Разходи (€)', data: months.map(m=>totals[m]||0),
-        backgroundColor: '#38bdf855', borderColor: '#38bdf8', borderWidth: 2, borderRadius: 6,
-      }]
+      datasets: [{ label: 'Разходи (€)', data: months.map(m=>totals[m]||0),
+        backgroundColor: '#38bdf855', borderColor: '#38bdf8', borderWidth: 2, borderRadius: 6 }]
     },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        x: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
-        y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8', callback: v=>'€'+v.toLocaleString() } }
+    options: { responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false} },
+      scales:{
+        x:{grid:{color:'#334155'},ticks:{color:'#94a3b8'}},
+        y:{grid:{color:'#334155'},ticks:{color:'#94a3b8',callback:v=>'€'+v.toLocaleString()}}
       }
     }
   });
 
   // Breakdown table
-  const expCats = fin.expenses;
-  const catList = Object.entries(expCats)
-    .map(([k,v])=>({k, total: Object.values(v).reduce((a,b)=>a+b,0)}))
+  const catList = Object.entries(fin.expenses)
+    .map(([k,v])=>({k,total:Object.values(v).reduce((a,b)=>a+b,0)}))
     .sort((a,b)=>b.total-a.total);
   document.querySelector('#expTable tbody').innerHTML = catList.map(x=>
     `<tr><td>${x.k}</td><td style="text-align:right;font-weight:600;color:var(--accent)">€${x.total.toLocaleString('bg-BG',{maximumFractionDigits:0})}</td></tr>`
@@ -233,61 +235,50 @@ async function load() {
     type: 'bar',
     data: {
       labels: catList.map(x=>x.k),
-      datasets: [{
-        data: catList.map(x=>x.total),
+      datasets: [{ data: catList.map(x=>x.total),
         backgroundColor: catList.map((_,i)=>COLORS[i%COLORS.length]+'bb'),
         borderColor: catList.map((_,i)=>COLORS[i%COLORS.length]),
-        borderWidth: 1, borderRadius: 4,
-      }]
+        borderWidth:1, borderRadius:4 }]
     },
-    options: {
-      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        x: { grid: { color: '#334155' }, ticks: { color: '#94a3b8', callback: v=>'€'+v.toLocaleString() } },
-        y: { grid: { display: false }, ticks: { color: '#94a3b8', font: { size: 11 } } }
+    options: { indexAxis:'y', responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{grid:{color:'#334155'},ticks:{color:'#94a3b8',callback:v=>'€'+v.toLocaleString()}},
+        y:{grid:{display:false},ticks:{color:'#94a3b8',font:{size:11}}}
       }
     }
   });
 
-  // Projects grid
+  // Projects grid — без badges
   document.getElementById('projectsGrid').innerHTML = d.projects.map(p => {
     const s = p.stats;
     const desc = PROJECT_DESCRIPTIONS[p.name] || p.description || '—';
-    let badge, statsHtml;
-
+    let statsHtml;
     if (p.type === 'folder') {
-      badge = '<span class="badge b-folder">папка</span>';
       statsHtml = `<div class="proj-stat">${s.files??'?'} файла</div><div class="proj-stat">последна промяна: <span>${s.last_modified||'?'}</span></div>`;
     } else {
-      const c = s.commits||0;
-      if (c > 20) badge = '<span class="badge b-active">активен</span>';
-      else if (c > 0) badge = '<span class="badge b-low">нисък</span>';
-      else badge = '<span class="badge b-idle">неактивен</span>';
-      statsHtml = `<div class="proj-stat">commits: <span>${c}</span></div><div class="proj-stat">+<span>${(s.lines_added||0).toLocaleString()}</span> реда</div>`;
+      statsHtml = `<div class="proj-stat">commits: <span>${s.commits||0}</span></div><div class="proj-stat">+<span>${(s.lines_added||0).toLocaleString()}</span> реда</div>`;
     }
-
     return `<div class="proj-card">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div class="proj-name">${p.name}</div>${badge}
-      </div>
+      <div class="proj-name">${p.name}</div>
       <div class="proj-desc">${desc}</div>
       <div class="proj-stats">${statsHtml}</div>
     </div>`;
   }).join('');
 
-  // Load saved API key
+  // Load saved key
   const saved = localStorage.getItem('or_key');
-  if (saved) document.getElementById('apiKey').value = saved;
+  if (saved) document.getElementById('apiKeyInput').value = saved;
 }
 
-// ── API key ──────────────────────────────────────────────────────────────────
+// Settings
 function saveKey() {
-  const k = document.getElementById('apiKey').value.trim();
-  if (k) { localStorage.setItem('or_key', k); addMsg('system', 'API ключът е запазен.'); }
+  const k = document.getElementById('apiKeyInput').value.trim();
+  if (k) localStorage.setItem('or_key', k);
+  document.getElementById('settingsModal').classList.remove('open');
 }
 
-// ── Chat ─────────────────────────────────────────────────────────────────────
+// Chat
 function addMsg(role, text) {
   const el = document.createElement('div');
   el.className = 'msg ' + role;
@@ -295,6 +286,7 @@ function addMsg(role, text) {
   const box = document.getElementById('chatMessages');
   box.appendChild(el);
   box.scrollTop = box.scrollHeight;
+  return el;
 }
 
 async function sendMsg() {
@@ -302,56 +294,45 @@ async function sendMsg() {
   const question = input.value.trim();
   if (!question) return;
 
-  const key = document.getElementById('apiKey').value.trim() || localStorage.getItem('or_key');
-  if (!key) { addMsg('system', 'Въведи OpenRouter API ключ.'); return; }
+  const key = localStorage.getItem('or_key');
+  if (!key) {
+    document.getElementById('settingsModal').classList.add('open');
+    return;
+  }
 
   input.value = '';
   addMsg('user', question);
   document.getElementById('sendBtn').disabled = true;
-  addMsg('system', '...');
-
-  const context = JSON.stringify(reportData, null, 2);
-  const system = `Ти си анализатор на тримесечен бизнес отчет. Отговаряй само на базата на предоставените данни. Отговаряй на български, кратко и точно.`;
-  const userMsg = `Данни от отчета:\n${context}\n\nВъпрос: ${question}`;
+  const thinking = addMsg('system', 'Мисля...');
 
   try {
     const resp = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${key}`,
-        'Content-Type': 'application/json',
-        'X-Title': 'QuarterlyReport',
-      },
+      headers: { 'Authorization': `Bearer ${key}`, 'Content-Type': 'application/json', 'X-Title': 'QuarterlyReport' },
       body: JSON.stringify({
-        model: 'anthropic/claude-opus-4',
+        model: 'anthropic/claude-haiku-4-5',
         max_tokens: 1024,
         messages: [
-          { role: 'system', content: system },
-          { role: 'user', content: userMsg }
+          { role: 'system', content: 'Ти си анализатор на тримесечен бизнес отчет. Отговаряй само на базата на предоставените данни. Отговаряй на български, кратко и точно. Не измисляй информация.' },
+          { role: 'user', content: `Данни:\n${JSON.stringify(reportData,null,2)}\n\nВъпрос: ${question}` }
         ]
       })
     });
-
     const data = await resp.json();
-    const dots = document.querySelector('.msg.system:last-child');
-    if (dots) dots.remove();
-
-    if (data.choices?.[0]?.message?.content) {
-      addMsg('ai', data.choices[0].message.content.trim());
-    } else {
-      addMsg('system', 'Грешка: ' + (data.error?.message || 'Неизвестна грешка'));
-    }
+    thinking.remove();
+    const answer = data.choices?.[0]?.message?.content;
+    if (answer) addMsg('ai', answer.trim());
+    else addMsg('system', 'Грешка: ' + (data.error?.message || JSON.stringify(data)));
   } catch(e) {
-    const dots = document.querySelector('.msg.system:last-child');
-    if (dots) dots.remove();
+    thinking.remove();
     addMsg('system', 'Грешка: ' + e.message);
   }
 
   document.getElementById('sendBtn').disabled = false;
-  document.getElementById('chatInput').focus();
+  input.focus();
 }
 
-load().catch(e => console.error(e));
+load().catch(console.error);
 </script>
 </body>
 </html>
