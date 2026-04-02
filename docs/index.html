@@ -143,6 +143,12 @@
     <div class="chart-wrap tall"><canvas id="catChart"></canvas></div>
   </div>
 
+  <!-- Степен на завършеност -->
+  <div class="card">
+    <h2>Степен на зрялост по проект (%)</h2>
+    <div class="chart-wrap tall"><canvas id="maturityChart"></canvas></div>
+  </div>
+
   <!-- Проекти -->
   <div class="card">
     <h2>Проекти</h2>
@@ -181,7 +187,23 @@ const PROJECT_DESCRIPTIONS = {
   'ai-agent':         'Централна 24/7 AI агент система — оркестрира Claude Code agent, паралелни task опашки и Telegram нотификации. Служи като инфраструктурна основа, върху която работят останалите агенти. Поддържа множество AI модели едновременно (Claude, Groq, OpenRouter).',
   'office-assistant':   'AI офис асистент с FastAPI backend и асинхронна task queue. Приема задача с прикачен документ, AI модел (Groq/Qwen) я обработва и връща резултат. Активно използван — обработва реални заявки за анализ на бюджети и документи.',
   'ai-projects/idea-gate': 'Платформа за управление и валидиране на бизнес идеи с AI. Структурира, оценява и приоритизира идеи по зададени критерии — пазарен потенциал, сложност на изпълнение, ресурси. Помага на екипа да взема по-обосновани решения кои инициативи да развива.',
-  'quarterly-report':   'Инструментът, с който четете този отчет. Автоматично събира данни от всички GitHub репота и финансовия Excel, генерира визуален dashboard и го публикува онлайн. Пуска се с една команда веднъж на тримесечие.',
+  'quarterly-report':      'Инструментът, с който четете този отчет. Автоматично събира данни от всички GitHub репота и финансовия Excel, генерира визуален dashboard и го публикува онлайн. Пуска се с една команда веднъж на тримесечие.',
+  'procurement-pipeline':  'Pipeline за автоматизация на процеса по обществени поръчки — от сваляне и анализ на документация до структуриране на офертата. В момента е в най-ранна фаза — концепцията е оформена, техническата реализация предстои.',
+};
+
+const PROJECT_MATURITY = {
+  'schedule-generator':    85,
+  'xml-json':              90,
+  'NemoClaw':              40,
+  'website':               35,
+  'aiAgents':              30,
+  'ai-agent':              30,
+  'ai-projects/idea-gate': 30,
+  'office-assistant':      20,
+  'calculator':            25,
+  'tp-agent':              15,
+  'procurement-pipeline':   5,
+  'quarterly-report':      70,
 };
 
 let reportData = null;
@@ -248,6 +270,46 @@ async function load() {
       scales:{
         x:{grid:{color:'#334155'},ticks:{color:'#94a3b8',callback:v=>'€'+v.toLocaleString()}},
         y:{grid:{display:false},ticks:{color:'#94a3b8',font:{size:11}}}
+      }
+    }
+  });
+
+  // Maturity chart
+  const maturityProjects = d.projects
+    .filter(p => p.name !== 'quarterly-report')
+    .map(p => ({ name: p.name, pct: PROJECT_MATURITY[p.name] ?? 10 }))
+    .sort((a,b) => b.pct - a.pct);
+
+  new Chart(document.getElementById('maturityChart'), {
+    type: 'bar',
+    data: {
+      labels: maturityProjects.map(p => p.name),
+      datasets: [{
+        data: maturityProjects.map(p => p.pct),
+        backgroundColor: maturityProjects.map(p => {
+          if (p.pct >= 75) return '#34d39988';
+          if (p.pct >= 40) return '#38bdf888';
+          if (p.pct >= 20) return '#fb923c88';
+          return '#f8717188';
+        }),
+        borderColor: maturityProjects.map(p => {
+          if (p.pct >= 75) return '#34d399';
+          if (p.pct >= 40) return '#38bdf8';
+          if (p.pct >= 20) return '#fb923c';
+          return '#f87171';
+        }),
+        borderWidth: 1, borderRadius: 4,
+      }]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.x}% завършен` } }
+      },
+      scales: {
+        x: { min:0, max:100, grid:{color:'#334155'}, ticks:{color:'#94a3b8', callback:v=>v+'%'} },
+        y: { grid:{display:false}, ticks:{color:'#94a3b8', font:{size:11}} }
       }
     }
   });
