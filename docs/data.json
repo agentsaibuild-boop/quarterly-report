@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-02T16:25:12.283141",
+  "generated_at": "2026-04-03T06:38:45.733299",
   "period": {
-    "from": "2026-01-02",
-    "to": "2026-04-02",
+    "from": "2026-01-03",
+    "to": "2026-04-03",
     "months": 3
   },
   "finances": {
@@ -218,161 +218,6 @@
   },
   "projects": [
     {
-      "name": "quarterly-report",
-      "description": "Quarterly performance report dashboard",
-      "type": "git",
-      "stats": {
-        "commits": 14,
-        "lines_added": 3285,
-        "lines_removed": 1616,
-        "last_commit": "2026-04-02 16:20:30 +0300 data: update 2026-04-02",
-        "branch": "master",
-        "recent_commits": [
-          "data: update 2026-04-02",
-          "data: update 2026-04-02",
-          "data: update 2026-04-02",
-          "data: update 2026-04-02",
-          "data: update 2026-04-02",
-          "Dashboard: remove badges, chat on top, settings modal instead of visible key",
-          "data: update + fix office-assistant duplicate",
-          "Dashboard: Bulgarian UI, project descriptions, chat, layout rework",
-          "Add GitHub Pages dashboard with Chart.js",
-          "Auto-discover all GitHub repos via gh CLI — no manual config needed",
-          "Add website + xml-json repos, auto git pull before scan",
-          "Simplify: премахнати analyze.py, generate_report.py, expenses.csv",
-          "Fix: OpenRouter support, markdown fallback, HTML renderer",
-          "Initial: тримесечен отчет v1.0"
-        ]
-      }
-    },
-    {
-      "name": "office-assistant",
-      "description": "AI офис асистент — FastAPI backend, task queue, AI модели",
-      "type": "git",
-      "stats": {
-        "commits": 1,
-        "lines_added": 1738,
-        "lines_removed": 0,
-        "last_commit": "2026-04-02 15:55:57 +0300 Initial commit — AI office assistant v1.0",
-        "branch": "master",
-        "recent_commits": [
-          "Initial commit — AI office assistant v1.0"
-        ]
-      }
-    },
-    {
-      "name": "aiAgents",
-      "description": "",
-      "type": "git",
-      "stats": {
-        "commits": 3,
-        "lines_added": 3696,
-        "lines_removed": 380,
-        "last_commit": "2026-04-02 15:29:19 +0300 Update orchestrators, telegram bot, and admin flow",
-        "branch": "main",
-        "recent_commits": [
-          "Update orchestrators, telegram bot, and admin flow",
-          "Add Claude Code agent, parallel queues, and notification fixes",
-          "Initial commit — 24/7 AI agent system"
-        ]
-      }
-    },
-    {
-      "name": "website",
-      "description": "",
-      "type": "git",
-      "stats": {
-        "commits": 3,
-        "lines_added": 9859,
-        "lines_removed": 330,
-        "last_commit": "2026-04-02 15:09:38 +0300 Add pitch.json: project logic and application specs",
-        "branch": "main",
-        "recent_commits": [
-          "Add pitch.json: project logic and application specs",
-          "Add applications catalog, 2FA, Stripe, auth fixes",
-          "AIBUILD AGENTS – marketing site + V2 app"
-        ]
-      }
-    },
-    {
-      "name": "calculator",
-      "description": "",
-      "type": "git",
-      "stats": {
-        "commits": 2,
-        "lines_added": 1130,
-        "lines_removed": 0,
-        "last_commit": "2026-04-02 15:01:31 +0300 Add documentation: README, logic.json, and .gitignore",
-        "branch": "master",
-        "recent_commits": [
-          "Add documentation: README, logic.json, and .gitignore",
-          "Initial commit: FTE Hypothesis Validator"
-        ]
-      }
-    },
-    {
-      "name": "schedule-generator",
-      "description": "",
-      "type": "git",
-      "stats": {
-        "commits": 84,
-        "lines_added": 27082,
-        "lines_removed": 3053,
-        "last_commit": "2026-03-31 10:12:44 +0300 fix: replace Manual=1 with Manual=0+ConstraintType=2, update knowledge",
-        "branch": "main",
-        "recent_commits": [
-          "fix: replace Manual=1 with Manual=0+ConstraintType=2, update knowledge",
-          "fix: add ManualStart/ManualFinish/ManualDuration to XML export for MS Project bars",
-          "fix: update time_ago tests for 'днес' instead of hours",
-          "fix: remove hours from project time_ago, remove pinned model label from sidebar",
-          "feat: remove Gantt chart, chat goes full-width, add schedule tabs below",
-          "fix: eliminate 6 KeyError crashes in modify/gantt/questionnaire flows",
-          "fix: full UI debug - remove dead code, auto-load on browse, clean sidebar",
-          "feat: wall frame style on all buttons (border + shadow + press effect)",
-          "fix: recursive file scan + direct chat responses without code generation",
-          "fix: reduce Anthropic correction cycles from 3 to 1 to cut API costs",
-          "feat: detailed operations, parallel teams questionnaire, gantt visual overhaul, xls+XML fixes",
-          "test: add 16 unit tests for _handle_confirm_change (previously uncovered)",
-          "test: add 11 unit tests for cascade guard + validate_schedule edge cases",
-          "refactor: replace 8 hardcoded timeout=120 with _API_TIMEOUT_SECONDS constant",
-          "test: add 22 unit tests for _handle_save_lesson (previously uncovered)"
-        ]
-      }
-    },
-    {
-      "name": "tp-agent",
-      "description": "",
-      "type": "git",
-      "stats": {
-        "commits": 1,
-        "lines_added": 8231,
-        "lines_removed": 0,
-        "last_commit": "2026-03-09 12:59:10 +0200 Initial commit — TP Agent v1.3 full backend + frontend",
-        "branch": "main",
-        "recent_commits": [
-          "Initial commit — TP Agent v1.3 full backend + frontend"
-        ]
-      }
-    },
-    {
-      "name": "xml-json",
-      "description": "Стъпка 1 строителен агент ",
-      "type": "git",
-      "stats": {
-        "commits": 4,
-        "lines_added": 302,
-        "lines_removed": 20,
-        "last_commit": "2026-02-22 23:10:56 +0200 добавен upload и download на файл",
-        "branch": "master",
-        "recent_commits": [
-          "добавен upload и download на файл",
-          "добавен уеб интерфейс",
-          "добавен converter v2 с меню",
-          "purvi commit xml to json"
-        ]
-      }
-    },
-    {
       "name": "NemoClaw",
       "description": "OpenClaw — NVIDIA open-source sandbox за автономни AI агенти",
       "type": "git",
@@ -398,23 +243,6 @@
           "Enable managed local Ollama inference and add cloud/Ollama model selection (#295)",
           "fix: parameterize sandbox name in setup.sh instead of hardcoding (#340)",
           "update installer url for curl (#346)"
-        ]
-      }
-    },
-    {
-      "name": "aiAgents",
-      "description": "24/7 AI агент система — Claude Code agent, паралелни опашки, нотификации",
-      "type": "git",
-      "stats": {
-        "commits": 3,
-        "lines_added": 3696,
-        "lines_removed": 380,
-        "last_commit": "2026-04-02 15:29:19 +0300 Update orchestrators, telegram bot, and admin flow",
-        "branch": "main",
-        "recent_commits": [
-          "Update orchestrators, telegram bot, and admin flow",
-          "Add Claude Code agent, parallel queues, and notification fixes",
-          "Initial commit — 24/7 AI agent system"
         ]
       }
     },
