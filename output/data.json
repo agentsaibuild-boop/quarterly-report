@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-02T15:57:09.746750",
+  "generated_at": "2026-04-03T06:39:11.808307",
   "period": {
-    "from": "2026-01-02",
-    "to": "2026-04-02",
+    "from": "2026-01-03",
+    "to": "2026-04-03",
     "months": 3
   },
   "finances": {
@@ -218,6 +218,35 @@
   },
   "projects": [
     {
+      "name": "quarterly-report",
+      "description": "Quarterly performance report dashboard",
+      "type": "git",
+      "stats": {
+        "commits": 15,
+        "lines_added": 3297,
+        "lines_removed": 1627,
+        "last_commit": "2026-04-02 16:25:12 +0300 data: update 2026-04-02",
+        "branch": "master",
+        "recent_commits": [
+          "data: update 2026-04-02",
+          "data: update 2026-04-02",
+          "data: update 2026-04-02",
+          "data: update 2026-04-02",
+          "data: update 2026-04-02",
+          "data: update 2026-04-02",
+          "Dashboard: remove badges, chat on top, settings modal instead of visible key",
+          "data: update + fix office-assistant duplicate",
+          "Dashboard: Bulgarian UI, project descriptions, chat, layout rework",
+          "Add GitHub Pages dashboard with Chart.js",
+          "Auto-discover all GitHub repos via gh CLI — no manual config needed",
+          "Add website + xml-json repos, auto git pull before scan",
+          "Simplify: премахнати analyze.py, generate_report.py, expenses.csv",
+          "Fix: OpenRouter support, markdown fallback, HTML renderer",
+          "Initial: тримесечен отчет v1.0"
+        ]
+      }
+    },
+    {
       "name": "office-assistant",
       "description": "AI офис асистент — FastAPI backend, task queue, AI модели",
       "type": "git",
@@ -229,27 +258,6 @@
         "branch": "master",
         "recent_commits": [
           "Initial commit — AI office assistant v1.0"
-        ]
-      }
-    },
-    {
-      "name": "quarterly-report",
-      "description": "Quarterly performance report dashboard",
-      "type": "git",
-      "stats": {
-        "commits": 7,
-        "lines_added": 2911,
-        "lines_removed": 1271,
-        "last_commit": "2026-04-02 15:48:19 +0300 Dashboard: Bulgarian UI, project descriptions, chat, layout rework",
-        "branch": "master",
-        "recent_commits": [
-          "Dashboard: Bulgarian UI, project descriptions, chat, layout rework",
-          "Add GitHub Pages dashboard with Chart.js",
-          "Auto-discover all GitHub repos via gh CLI — no manual config needed",
-          "Add website + xml-json repos, auto git pull before scan",
-          "Simplify: премахнати analyze.py, generate_report.py, expenses.csv",
-          "Fix: OpenRouter support, markdown fallback, HTML renderer",
-          "Initial: тримесечен отчет v1.0"
         ]
       }
     },
@@ -391,23 +399,6 @@
           "Enable managed local Ollama inference and add cloud/Ollama model selection (#295)",
           "fix: parameterize sandbox name in setup.sh instead of hardcoding (#340)",
           "update installer url for curl (#346)"
-        ]
-      }
-    },
-    {
-      "name": "aiAgents",
-      "description": "24/7 AI агент система — Claude Code agent, паралелни опашки, нотификации",
-      "type": "git",
-      "stats": {
-        "commits": 3,
-        "lines_added": 3696,
-        "lines_removed": 380,
-        "last_commit": "2026-04-02 15:29:19 +0300 Update orchestrators, telegram bot, and admin flow",
-        "branch": "main",
-        "recent_commits": [
-          "Update orchestrators, telegram bot, and admin flow",
-          "Add Claude Code agent, parallel queues, and notification fixes",
-          "Initial commit — 24/7 AI agent system"
         ]
       }
     },

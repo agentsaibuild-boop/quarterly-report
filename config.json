@@ -8,12 +8,6 @@
       "description": "OpenClaw — NVIDIA open-source sandbox за автономни AI агенти"
     },
     {
-      "name": "aiAgents",
-      "path": "/home/nikolay-zarov/ai-agent",
-      "type": "git",
-      "description": "24/7 AI агент система — Claude Code agent, паралелни опашки, нотификации"
-    },
-    {
       "name": "ai-projects/idea-gate",
       "path": "/home/nikolay-zarov/ai-projects/idea-gate",
       "type": "folder",
